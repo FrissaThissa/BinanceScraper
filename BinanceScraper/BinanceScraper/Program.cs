@@ -25,7 +25,7 @@ while (true)
                 break;
             if (Database.PushDatapoints(symbol, datapoints) == 0)
                 break;
-            if (starttime < minstarttime)
+            if (starttime != 0 && starttime < minstarttime)
                 break;
             starttime = datapoints[0].OpenTime - 60000000;
         }
